@@ -10,7 +10,9 @@ find_package(SDL2 REQUIRED)
 
 add_executable(raygun main.cpp
         engine/Application.cpp
-        engine/Application.h)
+        engine/Application.h
+        engine/graphics/Renderer.cpp
+        engine/graphics/Renderer.h)
 
 target_link_libraries(${PROJECT_NAME} ${SDL2_LIBRARIES})
 include_directories(${SDL2_INCLUDE_DIRS})
