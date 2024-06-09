@@ -22,6 +22,7 @@ namespace Raygun
 		~Application() = default;
 
 		void Run();
+		void Loop();
 		void OnUpdate();
 		void OnRender();
 

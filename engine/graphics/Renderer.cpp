@@ -30,18 +30,15 @@ namespace Raygun
 //======================================================================================================================
 	bool Renderer::Init(const char* WindowTitle)
 	{
-		if (SDL_Init(SDL_INIT_VIDEO) < 0) {
+		if (SDL_Init(SDL_INIT_VIDEO) < 0)
+		{
 			std::cout << "Error: SDL failed to Init Video" << '\n';
 			return false;
 		}
 
-		Window = SDL_CreateWindow(WindowTitle,
-								  SDL_WINDOWPOS_CENTERED,
-								  SDL_WINDOWPOS_CENTERED,
-								  Width,
-								  Height,
-								  SDL_WINDOW_SHOWN);
-		if (!Window) {
+		Window = SDL_CreateWindow(WindowTitle, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, Width, Height, SDL_WINDOW_SHOWN);
+		if (!Window)
+		{
 			std::cout << "Error: SDL failed to Init Window" << '\n';
 			return false;
 		}

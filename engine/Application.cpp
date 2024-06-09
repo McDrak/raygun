@@ -18,12 +18,23 @@ namespace Raygun
 //======================================================================================================================
 	void Application::Run()
 	{
-		if (!Renderer.Init(AppSpecification.Title)) {
+		if (!Renderer.Init(AppSpecification.Title))
+		{
 			std::cout << "Error: Renderer failed to Init" << '\n';
 			return;
 		}
 
+		// This should be run on a while(WindowIsNotClose)
+		Loop();
+
 		SDL_Delay(3000);
+	}
+
+//======================================================================================================================
+	void Application::Loop()
+	{
+		OnUpdate();
+		OnRender();
 	}
 
 //======================================================================================================================
@@ -34,5 +45,6 @@ namespace Raygun
 //======================================================================================================================
 	void Application::OnRender()
 	{
+		Renderer.Update();
 	}
 }
