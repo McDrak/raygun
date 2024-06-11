@@ -10,21 +10,21 @@
 namespace Raygun
 {
 //======================================================================================================================
-	Application::Application(const Raygun::ApplicationSpecification& Spec)
-		: AppSpecification(Spec), Renderer(Spec.Width, Spec.Height)
+	Application::Application(const Raygun::ApplicationSpecification& t_Specification)
+		: m_AppSpecification(t_Specification), m_Renderer(t_Specification.Width, t_Specification.Height)
 	{
 	}
 
 //======================================================================================================================
 	void Application::Run()
 	{
-		if (!Renderer.Init(AppSpecification.Title))
+		if (!m_Renderer.Init(m_AppSpecification.Title))
 		{
 			std::cout << "Error: Renderer failed to Init" << '\n';
 			return;
 		}
 
-		// This should be run on a while(WindowIsNotClose)
+		// TODO: This should be run on a while(WindowIsNotClose)
 		Loop();
 
 		SDL_Delay(3000);
@@ -45,6 +45,6 @@ namespace Raygun
 //======================================================================================================================
 	void Application::OnRender()
 	{
-		Renderer.Update();
+		m_Renderer.Update();
 	}
 }

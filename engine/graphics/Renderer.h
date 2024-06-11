@@ -12,15 +12,19 @@ namespace Raygun
 	class Renderer
 	{
 	public:
-		Renderer(int InWidth, int InHeight);
+		Renderer(int t_Width, int t_Height);
 		~Renderer();
 
-		bool Init(const char* WindowTitle);
+		bool Init(const char* t_WindowTitle);
 		void Update();
+		// TODO: Remove this function when proper update is done
+		void LoadMedia();
 
 	private:
-		int Width, Height;
-		SDL_Window* Window;
-		SDL_Surface* ScreenSurface;
+		int m_Width, m_Height;
+		SDL_Window* m_Window;
+		SDL_Surface* m_ScreenSurface;
+		// TODO: Remove this as well
+		SDL_Surface* m_HelloWorld;
 	};
 }

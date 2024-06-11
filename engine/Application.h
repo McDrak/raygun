@@ -10,15 +10,15 @@ namespace Raygun
 {
 	struct ApplicationSpecification
 	{
-		int Width = 1280;
-		int Height = 720;
+		int Width = 960;
+		int Height = 540;
 		const char* Title = "Project Raygun";
 	};
 
 	class Application
 	{
 	public:
-		explicit Application(const ApplicationSpecification& Spec = ApplicationSpecification());
+		explicit Application(const ApplicationSpecification& t_Specification = ApplicationSpecification());
 		~Application() = default;
 
 		void Run();
@@ -27,7 +27,7 @@ namespace Raygun
 		void OnRender();
 
 	private:
-		ApplicationSpecification AppSpecification;
-		Renderer Renderer;
+		ApplicationSpecification m_AppSpecification;
+		Renderer m_Renderer;
 	};
 }
